@@ -1,0 +1,45 @@
+{
+  "intro": "You wake up on the cold floor of a locked library. There is a desk with a drawer, a bookshelf, a painting and a heavy door with a four-digit keypad. Find the clues and escape!",
+  "aliases": {
+    "books": "bookshelf", "book": "bookshelf", "shelf": "bookshelf", "bookcase": "bookshelf",
+    "clock": "painting", "picture": "painting",
+    "candle": "desk", "notebook": "desk", "table": "desk",
+    "keypad": "door", "exit": "door",
+    "paper": "note", "letter": "note"
+  },
+  "objects": {
+    "desk": {
+      "examine": "A wooden desk with a notebook, a locked drawer and a single lit candle. You count exactly one candle.",
+      "sets": ["saw_candle"]
+    },
+    "bookshelf": {
+      "examine": "Most books are neatly aligned, but four stand out, tilted against the rest. Inside their covers are handwritten digits: 3, 7, 1 and 9.",
+      "sets": ["saw_books"]
+    },
+    "painting": {
+      "examine": "A painting of a grandfather clock. Its hands point to 4:25.",
+      "sets": ["saw_clock"]
+    },
+    "drawer": {
+      "examine_locked": "A small drawer in the desk with a four-digit keypad. It is locked.",
+      "examine_open": "The drawer is open. A folded note lies inside.",
+      "examine_open_empty": "The drawer is open and empty."
+    },
+    "door": {
+      "examine": "A heavy wooden door with a four-digit keypad. It is locked.",
+      "sets": []
+    }
+  },
+  "items": {
+    "note": {
+      "text": "Door code: the time in the painting, then the candles on the desk."
+    }
+  },
+  "codes": {
+    "drawer": "3719",
+    "door": "4251"
+  },
+  "requirements": {
+    "door": ["drawer"]
+  }
+}
